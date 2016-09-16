@@ -10,7 +10,7 @@ router.get('/start-meeting', function(req, res, next) {
   var response =  '{
  	"success": "Success",
  	"payload": "The meeting is starting"
-}'
+}';
   
   //socket goes here
   res.send(response);
