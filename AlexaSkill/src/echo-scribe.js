@@ -1,6 +1,7 @@
 import { Skill, Launch, Intent } from 'alexa-annotations';
 import { say, ask } from 'alexa-response';
 import { ssml } from 'alexa-ssml';
+import http from 'http';
 
 @Skill
 export default class Echoscribe {
@@ -8,9 +9,15 @@ export default class Echoscribe {
   @Launch
   @Intent('StartMeetingIntent')
   start({ meetingRoom = 'Red Ventures' }) {
-      return say(`Welcome to Echo Scribe, You meeting in ${meetingRoom} is starting now.`)
-        .card({ title:'Echoscribe', content:`Welcome to Echo Scribe, You meeting in ${meetingRoom} is starting now.` });
-    // return say(`Welcome to Echo Scribe, You meeting in ${meetingRoom} is starting now.`).card({ title:'Echoscribe', content:`Welcome to Echo Scribe, You meeting in ${meetingRoom} is starting now.` });
+    http.get('https://echoscribe.herokuapp.com/start-meeting', function () {
+    return say(`Welcome to Echo Scribe, http request success, You meeting in ${meetingRoom} is starting now.`)
+      .card({ title:'Echoscribe', content:`Welcome to Echo Scribe, You meeting in ${meetingRoom} is starting now.` });
+    context.done(null);
+  }).on('error', function () {
+    return say('there was an error, sad face')
+      .card({ title:'Echoscribe', content: 'there was an error, sad face' });
+    context.done('Failed');
+  });
   }
 
   @Intent('AMAZON.HelpIntent')
