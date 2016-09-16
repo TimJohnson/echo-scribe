@@ -1,8 +1,10 @@
+*.log
 *.pyc
 *.pyo
 *.temp
 *.tmp
 .DS_Store
+bin/
 node_modules/
 temp/
 tmp/
