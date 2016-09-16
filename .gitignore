@@ -1,0 +1,8 @@
+*.pyc
+*.pyo
+*.temp
+*.tmp
+.DS_Store
+node_modules/
+temp/
+tmp/
