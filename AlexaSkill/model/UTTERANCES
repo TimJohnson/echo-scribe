@@ -1,0 +1,7 @@
+hello say hello
+hello say hello {names|name}
+StartMeetingIntent start meeting in {meetingRoom}
+StartMeetingIntent start meeting
+StartMeetingIntent begin the meeting
+StartMeetingIntent start transcription
+StartMeetingIntent transcribe

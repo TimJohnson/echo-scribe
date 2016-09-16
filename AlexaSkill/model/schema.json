@@ -1,0 +1,14 @@
+{
+  "intents": [
+    { "intent": "StartMeetingIntent" },
+    { "intent": "AMAZON.CancelIntent" },
+    { "intent": "AMAZON.HelpIntent" },
+    { "intent": "AMAZON.StopIntent" },
+    {
+      "intent": "hello",
+      "slots": [
+        { "name": "name", "type": "LITERAL" }
+      ]
+    }
+  ]
+}
