@@ -53,6 +53,8 @@
     "skill"
   ],
   "dependencies": {
-    "fetch-polyfill": "^0.8.2"
+    "fetch-polyfill": "^0.8.2",
+    "isomorphic-fetch": "^2.2.1",
+    "superagent": "^2.2.0"
   }
 }

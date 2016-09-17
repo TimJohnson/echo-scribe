@@ -6,14 +6,37 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.get('/start-meeting', function(req, res, next) {
-  var response = {
-    success: 'Success',
-    payload: 'The meeting is starting'
-  }
+router.get('/start-meeting/:room', function(req, res, next) {
+  // res.setHeader('Content-Type', 'application/json');
+  var response =  {
+   	"success": "Success",
+   	"payload": "The meeting is starting in room " + req.params.room
+  };
   
   //socket goes here
-  res.send(response);
+  res.json(response);
+});
+
+router.get('/end-meeting/', function(req, res, next) {
+  // res.setHeader('Content-Type', 'application/json');
+  var response =  {
+   	"success": "Success",
+   	"payload": "The meeting has ended, thank you for using echoscribe"
+  };
+  
+  //socket goes here
+  res.json(response);
+});
+
+router.get('/meeting-list/', function(req, res, next) {
+  // res.setHeader('Content-Type', 'application/json');
+  var response =  {
+   	"success": "Success",
+   	"payload": ['Tim Johnson', 'Joe Guerra', 'Derek Piccola', 'Babak Keyvani']
+  };
+  
+  //socket goes here
+  res.json(response);
 });
 
 module.exports = router;
