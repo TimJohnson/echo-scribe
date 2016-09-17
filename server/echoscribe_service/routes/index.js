@@ -64,6 +64,12 @@ router.get('/meeting-list/', function(req, res, next) {
 });
 
 router.get('/new-room/', function(req, res, next) {
+  
+  var response =  {
+    "success": "Success",
+    "payload": "Ok, I found a new room"
+  };
+
 
   var io = req.app.get('socketio');
   
