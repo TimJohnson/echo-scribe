@@ -26,9 +26,8 @@ router.get('/start-meeting/:room', function(req, res, next) {
   };
   
   var io = req.app.get('socketio');
-  
   io.emit('welcome', {
-    msg: "test from route.",
+    msg: "Starting Meeting in Room " + req.params.room,
     timestamp: new Date()
   });
   
