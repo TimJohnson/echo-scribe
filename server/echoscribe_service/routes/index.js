@@ -12,7 +12,7 @@ router.get('/start-meeting/:room', function(req, res, next) {
   // res.setHeader('Content-Type', 'application/json');
   var response =  {
    	"success": "Success",
-   	"payload": "The meeting is starting in room " + req.params.room
+   	"payload": "Ok, I started the meeting in " + req.params.room
   };
   
   var io = req.app.get('socketio');
@@ -30,7 +30,7 @@ router.get('/start-meeting/:room', function(req, res, next) {
 router.get('/end-meeting/', function(req, res, next) {
   var response =  {
    	"success": "Success",
-   	"payload": "The meeting has ended, thank you for using echoscribe"
+   	"payload": "Ok, I ended the meeting. I saved the transcript for you."
   };
   
   var io = req.app.get('socketio');
@@ -48,7 +48,7 @@ router.get('/end-meeting/', function(req, res, next) {
 router.get('/meeting-list/', function(req, res, next) {
   var response =  {
    	"success": "Success",
-   	"payload": ['Tim Johnson', 'Joe Guerra', 'Derek Piccola', 'Babak Keyvani', 'Bob Ross']
+   	"payload": ['Tim Johnson', 'Joe Guerra', 'Derek Piccola', 'Babak Keyvani', 'Betsy']
   };
   
   var io = req.app.get('socketio');
@@ -81,7 +81,7 @@ router.get('/invite/:person', function(req, res, next) {
   
   var response =  {
     "success": "Success",
-    "payload": "Ok, I've invited " + req.params.person + " to the meeting. I've sent them a notification through slack."
+    "payload": "Ok, I invited " + req.params.person + " to the meeting. I sent them a slack notification."
   };
 
   var io = req.app.get('socketio');
