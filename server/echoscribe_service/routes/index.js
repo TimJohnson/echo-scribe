@@ -28,4 +28,15 @@ router.get('/end-meeting/', function(req, res, next) {
   res.json(response);
 });
 
+router.get('/meeting-list/', function(req, res, next) {
+  // res.setHeader('Content-Type', 'application/json');
+  var response =  {
+   	"success": "Success",
+   	"payload": ['Tim Johnson', 'Joe Guerra', 'Derek Piccola', 'Babak Keyvani']
+  };
+  
+  //socket goes here
+  res.json(response);
+});
+
 module.exports = router;
