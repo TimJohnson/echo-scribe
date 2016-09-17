@@ -58,7 +58,7 @@ io.on('connection', function(socket){
     user = users[users.length-1];
     console.log('%s joined on: %s', user.name, user.connected);
     fn('We are happy to have you ' + user.name);
-    socket.emit('start-meeting', {users: users, });
+    //socket.emit('start-meeting', {users: users, });
   });
 
   // when client starts meeting

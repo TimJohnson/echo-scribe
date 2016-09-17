@@ -29,7 +29,6 @@ html
 
       // receive welcome from server
       socket.on('welcome', function(data) {
-        document.querySelector('.echoHeader').innerHTML = data.msg;
 
         console.log(data.msg);
         console.log('Your meeting room was setup at: %s', data.timestamp);
@@ -39,7 +38,7 @@ html
       socket.on('start-meeting', function(data) {
 
         //start transcription
-        showRecordingUI();
+        showRecordingUI(data.payload.roomName);
         startTranscription();
 
         //emit user started the meeting
