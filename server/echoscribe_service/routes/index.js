@@ -5,16 +5,6 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   var io = req.app.get('socketio');
   
-  io.emit('welcome', {
-    msg: "test from route.",
-    timestamp: new Date()
-  });
-  
-  io.emit('user-connected', {
-    name: "test from base route.",
-    ts: new Date()
-  });
-
   res.render('index', { title: 'EchoScribe' });
 });
 
@@ -26,39 +16,64 @@ router.get('/start-meeting/:room', function(req, res, next) {
   };
   
   var io = req.app.get('socketio');
-  io.emit('welcome', {
-    msg: "Starting Meeting in Room " + req.params.room,
-    timestamp: new Date()
-  });
   
-  io.emit('user-connected', {
-    name: "test from start meeting.",
-    ts: new Date()
+  io.emit('start-meeting', {    
+    msg: "start-meeting",
+    timestamp: new Date(),
+    payload: {
+      roomName: req.params.room
+    }
   });
-    
-  //socket goes here
   res.json(response);
 });
 
 router.get('/end-meeting/', function(req, res, next) {
-  // res.setHeader('Content-Type', 'application/json');
   var response =  {
    	"success": "Success",
    	"payload": "The meeting has ended, thank you for using echoscribe"
   };
   
-  //socket goes here
+  var io = req.app.get('socketio');
+  
+  io.emit('end-meeting', {    
+    msg: "end-meeting",
+    timestamp: new Date(),
+    payload: {
+      
+    }
+  });
   res.json(response);
 });
 
 router.get('/meeting-list/', function(req, res, next) {
-  // res.setHeader('Content-Type', 'application/json');
   var response =  {
    	"success": "Success",
    	"payload": ['Tim Johnson', 'Joe Guerra', 'Derek Piccola', 'Babak Keyvani', 'Bob Ross']
   };
   
-  //socket goes here
+  var io = req.app.get('socketio');
+  
+  io.emit('meeting-list', {    
+    msg: "meeting-list",
+    timestamp: new Date(),
+    payload: {
+      
+    }
+  });
+  res.json(response);
+});
+
+router.get('/new-room/', function(req, res, next) {
+
+  var io = req.app.get('socketio');
+  
+  io.emit('new-room', {    
+    msg: "new-room",
+    timestamp: new Date(),
+    payload: {
+      room: 'Red Velvet'
+    }
+  });
   res.json(response);
 });
 
