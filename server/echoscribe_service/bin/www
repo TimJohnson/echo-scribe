@@ -33,6 +33,8 @@ counter = users.length;
 
 // io connection
 io.on('connection', function(socket){
+  
+  app.set('socketio', socket);
 
   // client connects
   socket.emit('welcome', {

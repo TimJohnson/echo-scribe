@@ -24,6 +24,8 @@ html
 
       // receive welcome from server
       socket.on('welcome', function(data) {
+        document.querySelector('.echoHeader').innerHTML = data.msg;
+        
         console.log(data.msg);
         console.log('Your meeting room was setup at: %s', data.timestamp);
       });
