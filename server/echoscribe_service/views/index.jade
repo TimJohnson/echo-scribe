@@ -1,5 +1,201 @@
 extends layout
 
 block content
-  h1.echoHeader= title
-  p Welcome to #{title}
+  #echoScribeUIWrap.mdl-layout__container
+      .mdl-layout.mdl-js-layout.mdl-layout--fixed-drawer.mdl-layout--fixed-header.has-drawer.is-upgraded(data-upgraded=',MaterialLayout')
+        header#esRecordingBar.mdl-layout__header.mdl-color--white.mdl-color-text--grey-900.is-casting-shadow
+          .flex-horizontal.flex-center.full-height
+            #recordingControlWrap.flex-grow-1.flex-basis-0
+              button#recordingControlStop.mdl-button.mdl-js-button.mdl-button--fab.mdl-js-ripple-effect.mdl-button--white
+                i.material-icons stop
+              button.mdl-button.mdl-js-button.mdl-button--fab.mdl-button--mini-fab.mdl-js-ripple-effect.mdl-button--white
+                i.material-icons pause
+              button.mdl-button.mdl-js-button.mdl-button--fab.mdl-button--mini-fab.mdl-js-ripple-effect.mdl-button--white
+                i.material-icons replay_10
+              //
+                      <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect mdl-button--white">
+                        <i class="material-icons">mic_off</i>
+                      </button>
+            // recordingControlWrap
+            #recordingRecordingDisplay.text-right
+              i.material-icons.recording-icon fiber_manual_record
+              |       Recording
+            // recordingRecordingDisplay
+            #recordingTimeDisplay.flex-grow-1.flex-basis-0.mdl-typography--display-2
+              | 13
+              span.time-unit m
+              |  12
+              span.time-unit s
+            // recordingTimeDisplay
+            #recordingActions
+              .flex-horizontal
+                div
+                  button.mdl-button.button--stacked.mdl-js-button
+                    div
+                      i.material-icons note_add
+                    div Notes
+                //
+                          <div>
+                            <button class="mdl-button button--stacked mdl-js-button">
+                              <div><i class="material-icons">note_add</i></div>
+                              <div>Replay</div>
+                            </button>
+                          </div>
+                div
+                  button.mdl-button.button--stacked.mdl-js-button
+                    div
+                      i.material-icons strikethrough_s
+                    div Redact
+              // flex-horizontal
+            // recordingActions
+          // flex-horizontal
+          #recordingProgress.mdl-progress.mdl-js-progress
+        #esSidebar.mdl-layout__drawer.mdl-color--blue-grey-900.mdl-color-text--grey-50(aria-hidden='true')
+          .flex-vertical
+            #esSidebarHeader
+              #sidebarLogo.mdl-typography--headline Echo Scribe
+              #meetingSelectorWrap
+                #meetingSelector.flex-horizontal
+                  i.material-icons.event-icon event
+                  #meetingId.event-title.flex-grow-1
+                    span(style='line-height:1.8;') New Meeting
+                  i.material-icons arrow_drop_down
+            #esSidebarBody.flex-grow-1
+              #meetingAttendeesHeader
+                h6
+                  | Meeting Attendees:
+                  button.mdl-button.mdl-js-button.mdl-button--icon.float-right
+                    i.material-icons add
+              ul.mdl-list
+                li#userBetsy.mdl-list__item.mdl-list__item--two-line
+                  span.mdl-list__item-primary-content
+                    i.mdl-list__item-avatar
+                      img(src='img/user_betsy.png', alt='Betsy Idlibi')
+                    span Betsy Idlibi
+                    span.mdl-list__item-sub-title bidlibi@payzer.com
+                  span.mdl-list__item-secondary-content
+                    a.mdl-list__item-secondary-action(href='#')
+                      i.material-icons more_vert
+                li.mdl-list__item.mdl-list__item--two-line
+                  span.mdl-list__item-primary-content
+                    i.mdl-list__item-avatar
+                      img(src='img/user_tim.png', alt='Tim Johnson')
+                    span Tim Johnson
+                    span.mdl-list__item-sub-title tjohnson@redventures.com
+                  span.mdl-list__item-secondary-content
+                    a.mdl-list__item-secondary-action(href='#')
+                      i.material-icons more_vert
+                li.mdl-list__item.mdl-list__item--two-line
+                  span.mdl-list__item-primary-content
+                    i.mdl-list__item-avatar
+                      img(src='img/user_babak.png', alt='Babak Keyvani')
+                    span Babak Keyvani
+                    span.mdl-list__item-sub-title babak@keyvani.com
+                  span.mdl-list__item-secondary-content
+                    a.mdl-list__item-secondary-action(href='#')
+                      i.material-icons more_vert
+                li.mdl-list__item.mdl-list__item--two-line
+                  span.mdl-list__item-primary-content
+                    i.mdl-list__item-avatar
+                      img(src='img/user_joe.png', alt='Joe Guerra')
+                    span Joe Guerra
+                    span.mdl-list__item-sub-title joseph.j.guerra@gmail.com
+                  span.mdl-list__item-secondary-content
+                    a.mdl-list__item-secondary-action(href='#')
+                      i.material-icons more_vert
+                li.mdl-list__item.mdl-list__item--two-line
+                  span.mdl-list__item-primary-content
+                    i.mdl-list__item-avatar
+                      img(src='img/user_alfonso.png', alt='Alfonso Cabrera')
+                    span Alfonso Cabrera
+                    span.mdl-list__item-sub-title acabrera@redventures.com
+                  span.mdl-list__item-secondary-content
+                    a.mdl-list__item-secondary-action(href='#')
+                      i.material-icons more_vert
+                li.mdl-list__item.mdl-list__item--two-line
+                  span.mdl-list__item-primary-content
+                    i.mdl-list__item-avatar
+                      img(src='img/user_brandon.png', alt='Brandon Fancher')
+                    span Brandon Fancher
+                    span.mdl-list__item-sub-title brandonfancher@gmail.com
+                  span.mdl-list__item-secondary-content
+                    a.mdl-list__item-secondary-action(href='#')
+                      i.material-icons more_vert
+                li.mdl-list__item.mdl-list__item--two-line
+                  span.mdl-list__item-primary-content
+                    i.mdl-list__item-avatar
+                      img(src='img/user_derek.png', alt='Derek Piccola')
+                    span Derek Piccola
+                    span.mdl-list__item-sub-title derekpiccola@gmail.com
+                  span.mdl-list__item-secondary-content
+                    a.mdl-list__item-secondary-action(href='#')
+                      i.material-icons more_vert
+        main#esMain.mdl-layout__content
+          #mainRecording(style='display:none;')
+            #transcriptCover
+              #transcriptSearchWrap
+                form(action='#')
+                  .mdl-textfield.mdl-js-textfield
+                    label.mdl-button.mdl-js-button.mdl-button--icon(for='sample6')
+                      i.material-icons search
+                    .mdl-textfield__expandable-holder
+                      input#sample6.mdl-textfield__input(type='text', placeholder='search transcript...')
+                      label.mdl-textfield__label(for='sample-expandable') Expandable Input
+              // transcriptSearchWrap
+            // transcriptCover
+            #transcriptOuterWrap
+              #transcriptInnerWrap
+                ul#transcriptBlockList.mdl-list
+                  li.mdl-list__item.mdl-list__item--two-line
+                    .flex-horizontal
+                      .transcript-block-user-wrap
+                        span.mdl-list__item-primary-content
+                          i.mdl-list__item-avatar
+                            img(src='img/user_joe.png', alt='Joe Guerra')
+                          span Joe Guerra
+                          span.mdl-list__item-sub-title 3:43pm
+                      .transcript-block-bubble-wrap
+                        .transcript-block-bubble
+                          | Yes, Madam Chairman. I would like to ask on the progression of the Gala Night and Award Ceremony which has been proposed in the previous meeting. Have all the arrangement been matter?
+                  li.mdl-list__item.mdl-list__item--two-line
+                    .flex-horizontal
+                      .transcript-block-user-wrap
+                        span.mdl-list__item-primary-content
+                          i.mdl-list__item-avatar
+                            img(src='img/user_tim.png', alt='Tim Johnson')
+                          span Tim Johnson
+                          span.mdl-list__item-sub-title 3:44pm
+                      .transcript-block-bubble-wrap
+                        .transcript-block-bubble
+                          | Cheetos are great.
+                  li.mdl-list__item.mdl-list__item--two-line
+                    .flex-horizontal
+                      .transcript-block-user-wrap
+                        span.mdl-list__item-primary-content
+                          i.mdl-list__item-avatar
+                            img(src='img/user_joe.png', alt='Joe Guerra')
+                          span Joe Guerra
+                          span.mdl-list__item-sub-title 3:43pm
+                      .transcript-block-bubble-wrap.is-scribing
+                        .transcript-block-bubble
+                          | That sounds great, but
+                        .inline-scriber.inline-scribing-animation
+                          .inline-scriber-inner
+                            .inline-scriber-quill
+                            .inline-scriber-line
+                            .inline-scriber-circle
+            // transcriptOuterWrap
+          // mainRecording
+          #mainStaging
+            #stagingCenterWrap
+              #stagingBubble.mdl-typography--display-1
+                | "Alexa, ask Echo Scribe to start a meeting."
+                #stagingBubbleIcon
+                  i.material-icons record_voice_over
+              #bigStartButton
+                #bigStartButtonCircle.mdl-button.mdl-js-button.mdl-button--fab.mdl-js-ripple-effect(onclick='showRecordingUI();')
+                  i.material-icons play_arrow
+                // <div id="bigStartButtonText" class="text-center mdl-typography--headline">Start Recording</div>
+            #recordingSplashPositioning
+              #recordingSplash
+                span#meetingStartedText.mdl-typography--display-3 Meeting Started
