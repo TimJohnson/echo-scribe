@@ -9,16 +9,20 @@ export default class Echoscribe {
   @Launch
   @Intent('StartMeetingIntent')
   start({ meetingRoom = 'Red Ventures' }) {
-    http.get('https://echoscribe.herokuapp.com/start-meeting', function () {
-    return say(`Welcome to Echo Scribe, http request success, You meeting in ${meetingRoom} is starting now.`)
-      .card({ title:'Echoscribe', content:`Welcome to Echo Scribe, You meeting in ${meetingRoom} is starting now.` });
-    context.done(null);
-  }).on('error', function () {
-    return say('there was an error, sad face')
-      .card({ title:'Echoscribe', content: 'there was an error, sad face' });
-    context.done('Failed');
-  });
-  }
+    console.log('Making a request...');
+    http.get('http://echoscribe.herokuapp.com/start-meeting', function () {
+      console.log('Success');
+      return say(`Welcome to Echo Scribe, http request success, You meeting in ${meetingRoom} is starting now.`)
+        .card({ title:'Echoscribe', content:`Welcome to Echo Scribe, You meeting in ${meetingRoom} is starting now.` });
+      context.succeed();      
+      context.done();
+    }).on('error', function (err) {
+      console.log('fail', err);
+      return say('there was an error, sad face')
+        .card({ title:'Echoscribe', content: 'there was an error, sad face' });
+      context.done('Failed');      
+    });
+    }
 
   @Intent('AMAZON.HelpIntent')
   help() {
