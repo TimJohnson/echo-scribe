@@ -27,11 +27,40 @@ var server = http.createServer(app);
 
 var io = require('socket.io')(server);
 
+// keep an array of users connected to the meeting
+users = [];
+counter = users.length;
+
 // io connection
 io.on('connection', function(socket){
-  console.log('a user connected');
-  socket.on('disconnect', function(){
-    console.log('user disconnected');
+
+  // client connects
+  socket.emit('welcome', {
+    msg: "Welcome to Echo-Scribe! Let's start your meeting.",
+    timestamp: new Date()
+  });
+
+  // user connects
+  socket.on('user-connected', function(data, fn) {
+    counter++;
+
+    users.push({
+      name: data.name + counter,
+      connected: data.ts
+    });
+
+    console.log('current Users:', users);
+    user = users[users.length-1];
+    console.log('%s joined on: %s', user.name, user.connected);
+    fn('We are happy to have you %s', user);
+    socket.emit('start-meeting', {users: users, });
+  });
+
+  // when client starts meeting
+  socket.on('user-started-meeting', function (data, fn) {
+    console.log('Meeting in room %s is in session now!', data.room.name);
+    lastUser = users[users.length-1];
+    fn(lastUser, data.room);
   });
 });
 
