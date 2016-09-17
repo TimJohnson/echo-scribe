@@ -11,10 +11,25 @@ export default class Echoscribe {
   start({ meetingRoom = 'Red Ventures' }) {
     console.log('Making a request...');
     const url = 'http://echoscribe.herokuapp.com/start-meeting/' + meetingRoom;
+    console.log('From: ', url);
     
-    return fetch(url).then(response => response.json()).then(({}) => {
-      return say(`Welcome to Echo Scribe, http request success, You meeting in ${meetingRoom} is starting now.`)
+    return fetch(url).then(response => response.json()).then(({payload}) => {
+      console.log(payload);
+      return say(`Welcome to Echo Scribe, Your meeting in ${meetingRoom} is starting now.`)
         .card({ title:'Echoscribe', content:`Welcome to Echo Scribe, You meeting in ${meetingRoom} is starting now.`});
+    });
+  }
+  
+  @Intent('EndMeetingIntent')
+  end() {
+    console.log('Making a request...');
+    const url = 'http://echoscribe.herokuapp.com/end-meeting/';
+    console.log('From: ', url);
+    
+    return fetch(url).then(response => response.json()).then(({payload}) => {
+      console.log(payload);
+      return say(payload)
+        .card({ title:'Echoscribe', content: payload});
     });
   }
 
@@ -27,5 +42,4 @@ export default class Echoscribe {
   stop() {
     return say(<speak>Goodbye!</speak>);
   }
-
 }
