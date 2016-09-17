@@ -1,7 +1,7 @@
 import { Skill, Launch, Intent } from 'alexa-annotations';
 import { say, ask } from 'alexa-response';
 import { ssml } from 'alexa-ssml';
-import request from 'superagent';
+import fetch from 'isomorphic-fetch';
 
 @Skill
 export default class Echoscribe {
@@ -10,14 +10,12 @@ export default class Echoscribe {
   @Intent('StartMeetingIntent')
   start({ meetingRoom = 'Red Ventures' }) {
     console.log('Making a request...');
+    const url = 'http://echoscribe.herokuapp.com/start-meeting';
     
-    request.get('http://echoscribe.herokuapp.com/start-meeting').end(function(err, res) {
-      if (err) throw err;
-      console.log('response: ', res);
+    return fetch(url).then(response => response.json()).then(({}) => {
       return say(`Welcome to Echo Scribe, http request success, You meeting in ${meetingRoom} is starting now.`)
-        .card({ title:'Echoscribe', content:`Welcome to Echo Scribe, You meeting in ${meetingRoom} is starting now.` });
+        .card({ title:'Echoscribe', content:`Welcome to Echo Scribe, You meeting in ${meetingRoom} is starting now.`});
     });
-    
   }
 
   @Intent('AMAZON.HelpIntent')
