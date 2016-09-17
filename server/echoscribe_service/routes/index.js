@@ -32,7 +32,7 @@ router.get('/meeting-list/', function(req, res, next) {
   // res.setHeader('Content-Type', 'application/json');
   var response =  {
    	"success": "Success",
-   	"payload": ['Tim Johnson', 'Joe Guerra', 'Derek Piccola', 'Babak Keyvani']
+   	"payload": ['Tim Johnson', 'Joe Guerra', 'Derek Piccola', 'Babak Keyvani', 'Bob Ross']
   };
   
   //socket goes here
