@@ -51,3 +51,24 @@ html
           console.log('user %s is now in meeting room: %s', user.name, room.name);
         });
       });
+      
+      socket.on('end-meeting', function(data) {
+
+        //stop transcription
+        stopTranscription();
+
+        //emit user started the meeting
+        socket.emit('user-started-meeting', {
+          room: {
+            name: 'Red Tape',
+            number: '101'
+          }
+        }, function(user, room) {
+          console.log('user %s is now in meeting room: %s', user.name, room.name);
+        });
+      });
+      
+      socket.on('invite', function(data) {
+        //invite
+        betsyAdded();
+      });
