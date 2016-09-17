@@ -5,3 +5,46 @@ html
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
     block content
+    script(src='/socket.io/socket.io.js')
+    script.
+      var socket = io()
+
+      // when client connects to server
+      socket.on('connect', function () {
+        socket.emit('user-connected', {
+          name: 'User',
+          ts: new Date()
+          }, function(data) {
+            console.log('server says: %s', data);
+          });
+
+          // connect to meeting
+          socket.emit();
+      });
+
+      // receive welcome from server
+      socket.on('welcome', function(data) {
+        console.log(data.msg);
+        console.log('Your meeting room was setup at: %s', data.timestamp);
+      });
+
+      // client start meeting
+      socket.on('start-meeting', function(data) {
+
+        //start transcription
+        startTranscription();
+
+        //emit user started the meeting
+        socket.emit('user-started-meeting', {
+          room: {
+            name: 'Red Tape',
+            number: '101'
+          }
+        }, function(user, room) {
+          console.log('user %s is now in meeting room: %s', user.name, room.name);
+        });
+      });
+
+      function startTranscription() {
+        console.log('Transcription started');
+      }
