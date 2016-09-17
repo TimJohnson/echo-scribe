@@ -1,10 +1,15 @@
 doctype html
 html
   head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+      title Echo Scribe™
+      link(rel='stylesheet', href='css/vendor/material.min.css')
+      link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')
+      link(rel='stylesheet', href='css/echoscribe-ui.css')
   body
     block content
+    script(src='js/vendor/material.min.js')
+    script(src='js/vendor/jquery-3.1.0.min.js')
+    script(src='js/echoscribe-ui.js')
     script(src='/socket.io/socket.io.js')
     script.
       var socket = io()
@@ -25,7 +30,7 @@ html
       // receive welcome from server
       socket.on('welcome', function(data) {
         document.querySelector('.echoHeader').innerHTML = data.msg;
-        
+
         console.log(data.msg);
         console.log('Your meeting room was setup at: %s', data.timestamp);
       });
@@ -34,6 +39,7 @@ html
       socket.on('start-meeting', function(data) {
 
         //start transcription
+        showRecordingUI();
         startTranscription();
 
         //emit user started the meeting
