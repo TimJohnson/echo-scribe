@@ -3,8 +3,8 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  var socket = req.app.get('socketio');
-
+  var io = req.app.get('socketio');
+  
   res.render('index', { title: 'EchoScribe' });
 });
 
@@ -14,10 +14,10 @@ router.get('/start-meeting/:room', function(req, res, next) {
    	"success": "Success",
    	"payload": "Ok, I started the meeting in " + req.params.room
   };
-
-  var socket = req.app.get('socketio');
-
-  socket.emit('start-meeting', {
+  
+  var io = req.app.get('socketio');
+  
+  io.emit('start-meeting', {    
     msg: "start-meeting",
     timestamp: new Date(),
     payload: {
@@ -32,14 +32,14 @@ router.get('/end-meeting/', function(req, res, next) {
    	"success": "Success",
    	"payload": "Ok, I ended the meeting. I saved the transcript for you."
   };
-
-  var socket = req.app.get('socketio');
-
-  socket.emit('end-meeting', {
+  
+  var io = req.app.get('socketio');
+  
+  io.emit('end-meeting', {    
     msg: "end-meeting",
     timestamp: new Date(),
     payload: {
-
+      
     }
   });
   res.json(response);
@@ -50,14 +50,14 @@ router.get('/meeting-list/', function(req, res, next) {
    	"success": "Success",
    	"payload": ['Tim Johnson', 'Joe Guerra', 'Derek Piccola', 'Babak Keyvani', 'Betsy']
   };
-
-  var socket = req.app.get('socketio');
-
-  socket.emit('meeting-list', {
+  
+  var io = req.app.get('socketio');
+  
+  io.emit('meeting-list', {    
     msg: "meeting-list",
     timestamp: new Date(),
     payload: {
-
+      
     }
   });
   res.json(response);
@@ -65,9 +65,9 @@ router.get('/meeting-list/', function(req, res, next) {
 
 router.get('/new-room/', function(req, res, next) {
 
-  var socket = req.app.get('socketio');
-
-  socket.emit('new-room', {
+  var io = req.app.get('socketio');
+  
+  io.emit('new-room', {    
     msg: "new-room",
     timestamp: new Date(),
     payload: {
@@ -78,15 +78,15 @@ router.get('/new-room/', function(req, res, next) {
 });
 
 router.get('/invite/:person', function(req, res, next) {
-
+  
   var response =  {
     "success": "Success",
     "payload": "Ok, I invited " + req.params.person + " to the meeting. I sent them a slack notification."
   };
 
-  var socket = req.app.get('socketio');
-
-  socket.emit('invite', {
+  var io = req.app.get('socketio');
+  
+  io.emit('invite', {    
     msg: "invite",
     timestamp: new Date(),
     payload: {
