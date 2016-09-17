@@ -32,6 +32,11 @@ export default class Echoscribe {
         .card({ title:'Echoscribe', content: payload});
     });
   }
+  
+  @Intent('NearbyRoomIntent')
+  nearby() {
+    return say('It looks like Red Velvet will be open in 5 minutes, I went ahead and booked this room for you.').build();
+  }
 
   @Intent('AMAZON.HelpIntent')
   help() {
