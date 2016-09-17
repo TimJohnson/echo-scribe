@@ -3,7 +3,19 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  var io = req.app.get('socketio');
+  
+  io.emit('welcome', {
+    msg: "test from route.",
+    timestamp: new Date()
+  });
+  
+  io.emit('user-connected', {
+    name: "test from base route.",
+    ts: new Date()
+  });
+
+  res.render('index', { title: 'EchoScribe' });
 });
 
 router.get('/start-meeting/:room', function(req, res, next) {
@@ -13,6 +25,18 @@ router.get('/start-meeting/:room', function(req, res, next) {
    	"payload": "The meeting is starting in room " + req.params.room
   };
   
+  var io = req.app.get('socketio');
+  
+  io.emit('welcome', {
+    msg: "test from route.",
+    timestamp: new Date()
+  });
+  
+  io.emit('user-connected', {
+    name: "test from start meeting.",
+    ts: new Date()
+  });
+    
   //socket goes here
   res.json(response);
 });
