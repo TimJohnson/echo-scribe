@@ -10,7 +10,7 @@ export default class Echoscribe {
   @Intent('StartMeetingIntent')
   start({ meetingRoom = 'Red Ventures' }) {
     console.log('Making a request...');
-    const url = 'http://echoscribe.herokuapp.com/start-meeting';
+    const url = 'http://echoscribe.herokuapp.com/start-meeting/' + meetingRoom;
     
     return fetch(url).then(response => response.json()).then(({}) => {
       return say(`Welcome to Echo Scribe, http request success, You meeting in ${meetingRoom} is starting now.`)

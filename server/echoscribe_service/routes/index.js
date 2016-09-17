@@ -6,11 +6,11 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.get('/start-meeting', function(req, res, next) {
+router.get('/start-meeting/:room', function(req, res, next) {
   // res.setHeader('Content-Type', 'application/json');
   var response =  {
    	"success": "Success",
-   	"payload": "The meeting is starting"
+   	"payload": "The meeting is starting in room " + req.params.room
   };
   
   //socket goes here
