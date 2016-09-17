@@ -7,13 +7,14 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/start-meeting', function(req, res, next) {
-  var response = {
-    success: 'Success',
-    payload: 'The meeting is starting'
-  }
+  // res.setHeader('Content-Type', 'application/json');
+  var response =  {
+   	"success": "Success",
+   	"payload": "The meeting is starting"
+  };
   
   //socket goes here
-  res.send(response);
+  res.json(response);
 });
 
 module.exports = router;
