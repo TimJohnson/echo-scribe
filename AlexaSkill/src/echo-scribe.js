@@ -35,7 +35,14 @@ export default class Echoscribe {
   
   @Intent('NearbyRoomIntent')
   nearby() {
-    return say('It looks like Red Velvet will be open in 5 minutes, I went ahead and booked this room for you.').build();
+    console.log('Making a request...');
+    const url = 'http://echoscribe.herokuapp.com/new-room/';
+    console.log('From: ', url);
+    
+    return fetch(url).then(response => response.json()).then(() => {
+      return say('It looks like Red Velvet will be open in 5 minutes, I went ahead and booked this room for you.')
+        .card({ title:'Echoscribe', content: 'It looks like Red Velvet will be open in 5 minutes, I went ahead and booked this room for you.'});
+    });
   }
   
   @Intent('ProTipIntent')
@@ -60,8 +67,15 @@ export default class Echoscribe {
   }
   
   @Intent('InvitePersonToMeetingIntent')
-  inviteToMeeting({ person = 'Tim Johnson' }) {        
-    return say(`Ok, I've invited ${person} to the meeting. I've sent them a notification through slack.`).build();
+  inviteToMeeting({ person = 'Tim Johnson' }) {
+    console.log('Making a request...');
+    const url = 'http://echoscribe.herokuapp.com/invite/' + person;
+    console.log('From: ', url);
+    
+    return fetch(url).then(response => response.json()).then(({ payload }) => {
+      return say(payload)
+        .card({ title:'Echoscribe', content: payload});
+    });
   }
   
   @Intent('ShowMeetingListAttendees')

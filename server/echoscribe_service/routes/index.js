@@ -77,4 +77,23 @@ router.get('/new-room/', function(req, res, next) {
   res.json(response);
 });
 
+router.get('/invite/:person', function(req, res, next) {
+  
+  var response =  {
+    "success": "Success",
+    "payload": "Ok, I've invited " + req.params.person + " to the meeting. I've sent them a notification through slack."
+  };
+
+  var io = req.app.get('socketio');
+  
+  io.emit('invite', {    
+    msg: "invite",
+    timestamp: new Date(),
+    payload: {
+      person: req.params.person
+    }
+  });
+  res.json(response);
+});
+
 module.exports = router;
