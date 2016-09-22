@@ -18,6 +18,21 @@ function showRecordingUI(roomName) {
   $(meetingSelector).addClass('changed');
   startTimer();
   startProgressBar();
+  
+  var recognition = new webkitSpeechRecognition();
+  recognition.continuous = true;
+  recognition.interimResults = true;
+  recognition.lang = "en-US";
+  recognition.start();
+
+  recognition.onresult = function (e) {
+    var textarea = document.getElementById('mySpeech');
+    for (var i = e.resultIndex; i < e.results.length; ++i) {
+      if (e.results[i].isFinal) {
+        textarea.innerHTML += e.results[i][0].transcript;
+        }
+      }
+    }
 
   
   
@@ -37,6 +52,12 @@ function finishRecordingUI() {
   $(endSecond).html(endSecondVal);
   console.log(second);
   console.log(minute);
+  
+  var recognition = new webkitSpeechRecognition();
+  recognition.continuous = true;
+  recognition.interimResults = true;
+  recognition.lang = "en-US";
+  recognition.stop();
 
 
   setTimeout(function(){
