@@ -39,7 +39,6 @@ html
 
         //start transcription
         showRecordingUI(data.payload.roomName);
-        startTranscription();
 
         //emit user started the meeting
         socket.emit('user-started-meeting', {
@@ -55,7 +54,7 @@ html
       socket.on('end-meeting', function(data) {
 
         //stop transcription
-        stopTranscription();
+        finishRecordingUI();
 
         //emit user started the meeting
         socket.emit('user-started-meeting', {

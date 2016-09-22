@@ -11,9 +11,11 @@ var endSecond = $('#endSecond');
 var finishedMeetingNotes = $('#finishedMeetingNotes');
 
 // start recording
-function showRecordingUI() {
+function showRecordingUI(roomName) {
   $(uiWrap).addClass('is-recording');
   $(recordingSplash).addClass('in');
+  $(meetingId).html(roomName + '<div>3&ndash;4pm</div>');
+  $(meetingSelector).addClass('changed');
   startTimer();
   startProgressBar();
 
