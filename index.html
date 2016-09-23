@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Echo Scribe | Alexa Skill</title>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.min.css">
+	<link rel="stylesheet" type="text/css" href="css/echoscribe-site.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700" rel="stylesheet">
+	<script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+</head>
+<body>
+<div id="heroWrap">
+	<div class="mdl-grid max-width">
+		<div class="mdl-cell mdl-cell--12-col">
+			<img id="echoScribeLogo" src="img/echoscribe_logo.svg" alt="Echo Scribe Logo" />
+		</div>
+		<div class="mdl-cell mdl-cell--12-col">
+			<h1 class="text-center">Make Meetings Less <span class="painful-text">Painful</span></h1>
+		</div>
+		<div class="mdl-cell mdl-cell--12-col">
+			<h3 class="text-center">Run better meetings with <strong>Echo Scribe</strong><br/>an Alexa Skill and voice transcription helper.</h3>
+		</div>
+	</div>
+	<div class="mdl-grid max-width">
+	  <div class="mdl-cell mdl-cell--6-col">
+	  	<a href="http://echoscribe.herokuapp.com/" target="_blank" class="mdl-button mdl-js-button mdl-button--raised mdl-button--white-bg--red-color float-right mdl-button--xl">Check it Out</a>
+	  </div>
+	  <div class="mdl-cell mdl-cell--6-col">
+	  	<a href="https://github.com/rvhackathon2016/echo-scribe" target="_blank" class="mdl-button mdl-js-button mdl-button--raised mdl-button--white-ghost--red-color mdl-button--xl">Source Code</a>
+	  </div>
+	</div>
+</div><!--#heroWrap-->
+<div id="howItHelpsWrap">
+	<div class="mdl-grid max-width">
+	  <div class="mdl-cell mdl-cell--4-col text-center">
+	  	<i class="material-icons big-icon">record_voice_over</i>
+	  	<h3>Transcribe</h3>
+	  	<p>Record voices and display them as text. No more scrambled notes. And easy sharing with missing teammates.</p>
+	  </div>
+	  <div class="mdl-cell mdl-cell--4-col text-center">
+	  	<i class="material-icons big-icon">event</i>
+	  	<h3>Schedule</h3>
+	  	<p>See who's in a meeting. Get help adding and removing attendees with voice commands and Slack notifications.</p>
+	  </div>
+	  <div class="mdl-cell mdl-cell--4-col text-center">
+	  	<i class="material-icons big-icon">thumb_up</i>
+	  	<h3>Pro tips</h3>
+	  	<p>Run meetings like a pro with helpful productivity tips. Friendly reminders to save your team's time.</p>
+	  </div>
+	</div>
+</div><!--#howItHelpsWrap-->
+<div id="commandsWrap">
+	<div class="mdl-grid max-width-m">
+		<div class="mdl-cell mdl-cell--12-col">
+			<h2 class="mdl-typography--display-3 text-center">Echo Scribe Commands</h2>
+		</div>
+	  	<div class="mdl-cell mdl-cell--12-col">
+		  	<div class="mdl-card mdl-shadow--2dp mdl-card--fluid">
+		  		<div class="mdl-card__supporting-text">
+				 	<strong>Alexa, ask Echo Scribe...</strong>
+				 	<br/>
+				 	<br/>
+				 	... to start recording the meeting
+				 	<br/>
+				 	<br/>
+				 	... to stop the meeting
+				 	<br/>
+				 	<br/>
+				 	... to good off the record
+				</div>
+	  		</div>
+  		</div>
+	  	<div class="mdl-cell mdl-cell--12-col">
+		  	<div class="mdl-card mdl-shadow--2dp mdl-card--fluid">
+		  		<div class="mdl-card__supporting-text">
+				 	<strong>Alexa, ask Echo Scribe...</strong>
+				 	<br/>
+				 	<br/>
+				 	... to say who's in this meeting
+				 	<br/>
+				 	<br/>
+				 	... to invite Betsy
+				 	<br/>
+				 	<br/>
+				 	... to remove Henry
+				 	<br/>
+				 	<br/>
+				 	... to find a new meeting room
+				</div>
+	  		</div>
+  		</div>
+	  	<div class="mdl-cell mdl-cell--12-col">
+		  	<div class="mdl-card mdl-shadow--2dp mdl-card--fluid">
+		  		<div class="mdl-card__supporting-text">
+				 	<strong>Alexa, ask Echo Scribe...</strong>
+				 	<br/>
+				 	<br/>
+				 	... for a pro tip
+				</div>
+	  		</div>
+  		</div>
+  	</div>
+</div><!--#commandsWrap-->
+<div id="helpersWrap">
+	<div class="mdl-grid max-width">
+		<div class="mdl-cell mdl-cell--12-col">
+			<h2 class="mdl-typography--display-3 text-center">Meeting Helpers</h2>
+		</div>
+	  	<div class="mdl-cell mdl-cell--4-col">
+		  	<h4>Audio Bookmark</h4>
+		  	<p>Bookmark important points in the conversation</p>
+	  	</div>
+	  	<div class="mdl-cell mdl-cell--4-col">
+		  	<h4>Attendee List</h4>
+		  	<p>See who's required in the meeting at a glance</p>
+	  	</div>
+	  	<div class="mdl-cell mdl-cell--4-col">
+		  	<h4>Word Cloud</h4>
+		  	<p>See a word cloud highlighting most used words</p>
+	  	</div>
+	  	<div class="mdl-cell mdl-cell--4-col">
+		  	<h4>Invite Others</h4>
+		  	<p>Add people to the meeting with a slack notification</p>
+	  	</div>
+	  	<div class="mdl-cell mdl-cell--4-col">
+		  	<h4>Search Transcript</h4>
+		  	<p>Quickly search words or terms</p>
+	  	</div>
+	  	<div class="mdl-cell mdl-cell--4-col">
+		  	<h4>Email Transcript</h4>
+		  	<p>Email the results to attendees or missing people</p>
+	  	</div>
+	  	<div class="mdl-cell mdl-cell--4-col">
+		  	<h4>Audio Recording</h4>
+		  	<p>Save an audio file of the meeting for later review</p>
+	  	</div>
+	  	<div class="mdl-cell mdl-cell--4-col">
+		  	<h4>Progress Timing</h4>
+		  	<p>Stay on topic with a subtle progress timer</p>
+	  	</div>
+	  	<div class="mdl-cell mdl-cell--4-col">
+		  	<h4>Go Off Record</h4>
+		  	<p>Temporarily suspend transcription and stop recording</p>
+	  	</div>
+  	</div>
+</div><!--#helpersWrap-->
+<div id="techWrap">
+	<div class="mdl-grid max-width">
+		<div class="mdl-cell mdl-cell--12-col">
+			<h2 class="mdl-typography--display-3 text-center">Tech Supporting Echo Scribe</h2>
+		</div>
+	  	<div class="mdl-cell mdl-cell--3-col">
+	  		<div class="logo-circle-wrap">
+	  			<div class="logo-circle">
+	  			<img src="img/logos/sized/amazon_echo.png" alt="Amazon Echo" />
+	  		</div>
+	  	</div>
+	  			<h6>Amazon Echo</h6>
+	  	</div>
+	  	<div class="mdl-cell mdl-cell--3-col">
+	  		<div class="logo-circle-wrap">
+	  			<div class="logo-circle">
+	  			<img src="img/logos/sized/amazon_alexa.png" alt="Amazon Alexa" />
+		  	</div>
+		  </div>
+	  			<h6>Alexa Skill Kit</h6>
+	  	</div>
+	  	<div class="mdl-cell mdl-cell--3-col">
+	  		<div class="logo-circle-wrap">
+	  			<div class="logo-circle">
+	  			<img src="img/logos/sized/express.png" alt="Express" />
+		  	</div>
+		  </div>
+	  			<h6>Express</h6>
+	  	</div>
+	  	<div class="mdl-cell mdl-cell--3-col">
+	  		<div class="logo-circle-wrap">
+	  			<div class="logo-circle">
+	  			<img src="img/logos/sized/lambda.png" alt="AWS Lambda" />
+		  	</div>
+		  </div>
+	  			<h6>AWS Lambda</h6>
+	  	</div>
+	  	<div class="mdl-cell mdl-cell--3-col">
+	  		<div class="logo-circle-wrap">
+	  			<div class="logo-circle">
+	  			<img src="img/logos/sized/node.png" alt="Node JS" />
+		  	</div>
+		  </div>
+	  			<h6>Node</h6>
+	  	</div>
+	  	<div class="mdl-cell mdl-cell--3-col">
+	  		<div class="logo-circle-wrap">
+	  			<div class="logo-circle">
+	  			<img src="img/logos/sized/html.png" alt="Webkit Speech" />
+		  	</div>
+		  </div>
+	  			<h6>Webkit Speech API</h6>
+	  	</div>
+	  	<div class="mdl-cell mdl-cell--3-col">
+	  		<div class="logo-circle-wrap">
+	  			<div class="logo-circle">
+	  			<img src="img/logos/sized/socket.png" alt="Socket" />
+		  	</div>
+		  </div>
+	  			<h6>Socket</h6>
+	  	</div>
+	  	<div class="mdl-cell mdl-cell--3-col">
+	  		<div class="logo-circle-wrap">
+	  			<div class="logo-circle">
+	  			<img src="img/logos/sized/heroku.png" alt="Heroku" />
+		  	</div>
+		  </div>
+	  			<h6>Heroku</h6>
+	  	</div>
+  	</div>
+</div><!--#techWrap-->
+<div id="lunaWrap">
+	<div class="mdl-grid max-width">
+	  	<div class="mdl-cell mdl-cell--12-col text-center">
+	  		<div id="madeByWrap">
+	  			<h2 class="clearfix"><img id="lunaLogo" src="img/team_luna_clt_logo.png" /><div style="float:left;">Made by</div></h2>
+	  		</div>
+			<h4>During the 2016 Red Ventures Hackathon</h4>
+			<a id="teamLunaButton" class="mdl-button mdl-button--xl mdl-button--black-trans" href="http://teamluna.co/" target="_blank">See More Luna Things <i class="material-icons icon-right">arrow_forward</i></a>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

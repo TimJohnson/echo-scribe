@@ -1,0 +1,175 @@
+.mdl-grid.max-width {
+    max-width: 1200px;
+}
+
+.mdl-grid.max-width-m {
+    max-width: 768px;
+}
+
+.float-left {
+	float:left;
+}
+
+.float-right {
+	float:right;
+}
+
+#heroWrap {
+	padding: 20px 0 175px;
+	background-image: url('../img/hero_bg.jpg');
+	background-size: cover;
+
+	h1 {
+		color:#fff;
+		font-size:62px;
+		margin:130px 0 0;
+
+		.painful-text {
+			font-weight: 400;
+			color: #f7412d;
+			letter-spacing: 1px;
+			position: relative;
+
+			&:before {
+				content: ' ';
+				position: absolute;
+				top: 46px;
+				left: 0;
+				width: 100%;
+				height: 2px;
+				background: #f7412d;
+				transform: rotate(-20deg);
+			}
+
+			&:after {
+				content: ' ';
+				position: absolute;
+				top: 46px;
+				left: 0;
+				width: 100%;
+				height: 2px;
+				background: #f7412d;
+				transform: rotate(20deg);
+			}
+		}
+	}
+
+	h3 {
+		color: $white-65;
+		font-weight: 300;
+		letter-spacing: .5px;
+		margin-top:15px;
+		font-size: 32px;
+	}
+}
+
+#howItHelpsWrap {
+	padding: 85px 0;
+	background-color: #1d1d25;
+	color: #fff;
+
+	p {
+		font-size: 19px;
+		font-weight: 200;
+		color: $white-65;
+	}
+}
+
+#commandsWrap {
+	padding: 55px 0 75px;
+	background-color: $light-gray;
+
+	.mdl-card__supporting-text {
+	    font-size: 18px;
+	    color: rgba(0,0,0,0.65);
+
+	    strong {
+	    	color: $red;
+	    }
+	}
+}
+
+#helpersWrap {
+	padding: 55px 0 75px;
+	background-color: $red;
+	background-image: url('../img/helpers_bg.jpg');
+	background-size: cover;
+
+	h2 {
+		color:#fff;
+	}
+
+	h4 {
+		color: #fff;
+	}
+
+	p {
+		color: $white-65;
+		font-size: 19px;
+	}
+}
+
+#techWrap {
+	padding: 55px 0 75px;
+
+	h2 {
+		margin-bottom: 52px;
+	}
+
+	.logo-circle-wrap {
+		padding:0 5px;
+
+		.logo-circle {
+		    border: 1px solid #ddd;
+		    border-radius: 1000px;
+			margin:0 auto;
+		    padding: 30px;
+		    max-width: 140px;
+		    max-height: 140px;
+		}
+	}
+
+	h6 {
+		margin-top: 10px;
+		text-align: center;
+		color: rgba(0,0,0,0.54);
+	}
+}
+
+#lunaWrap {
+    background-image: url(../img/stars.svg);
+    background-repeat: repeat-x;
+    background-size: auto 300px;
+    background-position: center top;
+	background-color: $team-luna-dark;
+	padding:105px 0 115px;
+
+	#lunaLogo {
+	    float: right;
+	    max-width: 330px;
+	    margin: -30px 0 0 20px;
+	}
+
+	h2 {
+		color: #fff;
+	}
+
+	h4 {
+		color: $team-luna-blue;
+	}
+
+	#madeByWrap {
+		max-width: 540px;
+		margin:0 auto;
+	}
+
+	#teamLunaButton {
+		margin-top:20px;
+	}
+}
+
+.clearfix {
+	content: "";
+  	display: table;
+  	clear: both;
+}

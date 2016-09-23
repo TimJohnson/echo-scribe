@@ -1,0 +1,14 @@
+.mdl-card {
+
+	&.mdl-card--fluid {
+		width:100%;
+	}
+}
+
+#commandsWrap {
+
+	.mdl-card {
+		min-height:0;
+		padding:32px;
+	}
+}

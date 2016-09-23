@@ -1,0 +1,197 @@
+.mdl-grid.max-width {
+  max-width: 1200px; }
+
+.mdl-grid.max-width-m {
+  max-width: 768px; }
+
+.float-left {
+  float: left; }
+
+.float-right {
+  float: right; }
+
+#heroWrap {
+  padding: 20px 0 175px;
+  background-image: url("../img/hero_bg.jpg");
+  background-size: cover; }
+  #heroWrap h1 {
+    color: #fff;
+    font-size: 62px;
+    margin: 130px 0 0; }
+    #heroWrap h1 .painful-text {
+      font-weight: 400;
+      color: #f7412d;
+      letter-spacing: 1px;
+      position: relative; }
+      #heroWrap h1 .painful-text:before {
+        content: ' ';
+        position: absolute;
+        top: 46px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: #f7412d;
+        transform: rotate(-20deg); }
+      #heroWrap h1 .painful-text:after {
+        content: ' ';
+        position: absolute;
+        top: 46px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: #f7412d;
+        transform: rotate(20deg); }
+  #heroWrap h3 {
+    color: rgba(255, 255, 255, 0.65);
+    font-weight: 300;
+    letter-spacing: .5px;
+    margin-top: 15px;
+    font-size: 32px; }
+
+#howItHelpsWrap {
+  padding: 85px 0;
+  background-color: #1d1d25;
+  color: #fff; }
+  #howItHelpsWrap p {
+    font-size: 19px;
+    font-weight: 200;
+    color: rgba(255, 255, 255, 0.65); }
+
+#commandsWrap {
+  padding: 55px 0 75px;
+  background-color: #efeff3; }
+  #commandsWrap .mdl-card__supporting-text {
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.65); }
+    #commandsWrap .mdl-card__supporting-text strong {
+      color: #f7412d; }
+
+#helpersWrap {
+  padding: 55px 0 75px;
+  background-color: #f7412d;
+  background-image: url("../img/helpers_bg.jpg");
+  background-size: cover; }
+  #helpersWrap h2 {
+    color: #fff; }
+  #helpersWrap h4 {
+    color: #fff; }
+  #helpersWrap p {
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 19px; }
+
+#techWrap {
+  padding: 55px 0 75px; }
+  #techWrap h2 {
+    margin-bottom: 52px; }
+  #techWrap .logo-circle-wrap {
+    padding: 0 5px; }
+    #techWrap .logo-circle-wrap .logo-circle {
+      border: 1px solid #ddd;
+      border-radius: 1000px;
+      margin: 0 auto;
+      padding: 30px;
+      max-width: 140px;
+      max-height: 140px; }
+  #techWrap h6 {
+    margin-top: 10px;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.54); }
+
+#lunaWrap {
+  background-image: url(../img/stars.svg);
+  background-repeat: repeat-x;
+  background-size: auto 300px;
+  background-position: center top;
+  background-color: #162430;
+  padding: 105px 0 115px; }
+  #lunaWrap #lunaLogo {
+    float: right;
+    max-width: 330px;
+    margin: -30px 0 0 20px; }
+  #lunaWrap h2 {
+    color: #fff; }
+  #lunaWrap h4 {
+    color: #5082BE; }
+  #lunaWrap #madeByWrap {
+    max-width: 540px;
+    margin: 0 auto; }
+  #lunaWrap #teamLunaButton {
+    margin-top: 20px; }
+
+.clearfix {
+  content: "";
+  display: table;
+  clear: both; }
+
+.text-left {
+  text-align: left; }
+
+.text-center {
+  text-align: center; }
+
+.text-right {
+  text-align: right; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Roboto Slab" !Important; }
+
+.mdl-button.float-left {
+  display: block;
+  float: left; }
+.mdl-button.float-right {
+  display: block;
+  float: right; }
+.mdl-button.mdl-button--white-bg--red-color {
+  background-color: #fff;
+  color: #f7412d; }
+  .mdl-button.mdl-button--white-bg--red-color:hover {
+    background-color: #dddddf;
+    color: #d5300b; }
+  .mdl-button.mdl-button--white-bg--red-color:focus {
+    background-color: #bbbbbd;
+    color: #b31009; }
+.mdl-button.mdl-button--white-ghost--red-color {
+  box-shadow: none;
+  color: #fff; }
+.mdl-button.mdl-button--xl {
+  font-size: 21px;
+  font-weight: 200;
+  height: 56px;
+  padding: 0 32px;
+  line-height: 56px; }
+  .mdl-button.mdl-button--xl .icon-right {
+    float: right;
+    margin: 13px -6px 0 12px;
+    font-size: 28px; }
+.mdl-button.mdl-button--black-trans {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff; }
+  .mdl-button.mdl-button--black-trans:hover {
+    background-color: #fff;
+    color: #5082BE; }
+
+.mdl-card.mdl-card--fluid {
+  width: 100%; }
+
+#commandsWrap .mdl-card {
+  min-height: 0;
+  padding: 32px; }
+
+#echoScribeLogo {
+  max-width: 300px;
+  height: auto;
+  margin: 0 auto;
+  display: block; }
+
+.big-icon {
+  font-size: 62px; }
+
+img {
+  max-width: 100%;
+  height: auto; }
+
+.logo-circle {
+  border: 1px solid #ddd;
+  border-radius: 1000px; }
+
+/*# sourceMappingURL=echoscribe-site.css.map */
